@@ -1,0 +1,45 @@
+@import "../../global.scss";
+
+.body {
+  height: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6.14% ;
+  padding-right: 6.14% ;
+  padding-top: 6.14% ;
+  padding-bottom: 6.14% ;
+  padding-left: 6.14% ;
+  padding-right: 6.14% ;  
+  @include mobile {
+    padding-left: 2.14% ;
+    padding-right: 2.14% ;  
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .statCardsContainers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.6%;
+    row-gap: 5.5%;
+    width: calc(100% - 13.4vw);
+    height: 85%;
+    padding-left: 1.6%;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include mobile {
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding-left: 6.14% ;
+        padding-right: 6.14% ;
+      }
+    
+  }
+}
+
