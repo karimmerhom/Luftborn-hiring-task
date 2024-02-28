@@ -24,7 +24,7 @@ export default function MainPage() {
         }
       })
       .catch((e) => {
-        setIsLoading(false);
+        //setIsLoading(false);
         toast.error(e.message, {
           position: "bottom-center",
         });
