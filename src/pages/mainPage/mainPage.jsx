@@ -7,14 +7,14 @@ import "./mainPage.scss";
 
 export default function MainPage() {
   const [stats, setStats] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  //const [isLoading, setIsLoading] = useState(true);
 
   const getStatsCall = () => {
     getStats(10)
       .then((res) => {
         setStats(res.data)
         console.log("res: ", res);
-        setIsLoading(false);
+        //setIsLoading(false);
         if (res.status !== 200) {
           toast.error(res.messasge, {
             position: "bottom-center",
