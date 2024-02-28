@@ -7,7 +7,7 @@ export default function ReportCard() {
     <div className="reportCardBody">
       <div className="cardTop">
         <div className="picContainer">
-          <img src={ProfilePic} className="cardPic" />
+          <img src={ProfilePic} className="cardPic" alt="profile pic" />
         </div>
         <div className="textContainer">
           <text className="txt1">Report for</text>
