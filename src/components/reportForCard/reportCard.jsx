@@ -15,7 +15,9 @@ export default function ReportCard() {
         </div>
       </div>
       <div className="cardBottom">
-        <text style={{color: '#7078C9'}}>Daily</text> <text style={{color: '#FFFFFF'}}>Weekly</text> <text style={{color: '#7078C9'}}>Monthly</text>
+        <text style={{ color: "#7078C9" }}>Daily</text>{" "}
+        <text style={{ color: "#FFFFFF" }}>Weekly</text>{" "}
+        <text style={{ color: "#7078C9" }}>Monthly</text>
       </div>
     </div>
   );

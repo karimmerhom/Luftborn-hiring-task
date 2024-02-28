@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { getStats } from "../../api/api";
-import ReportForCard from "../../components/reportForCard/reportCard"
-import StatCard from "../../components/statCard/statCard"
+import ReportForCard from "../../components/reportForCard/reportCard";
+import StatCard from "../../components/statCard/statCard";
 import "./mainPage.scss";
 
 export default function MainPage() {
-  const [stats, setStats] = useState([]);
-  //const [isLoading, setIsLoading] = useState(true);
+  const [stats, setStats] = useState(undefined);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getStatsCall = () => {
     getStats(10)
       .then((res) => {
-        setStats(res.data)
+        setStats(res.data);
         console.log("res: ", res);
-        //setIsLoading(false);
+        setIsLoading(false);
         if (res.status !== 200) {
           toast.error(res.messasge, {
             position: "bottom-center",
@@ -24,7 +24,7 @@ export default function MainPage() {
         }
       })
       .catch((e) => {
-        //setIsLoading(false);
+        setIsLoading(false);
         toast.error(e.message, {
           position: "bottom-center",
         });
@@ -36,12 +36,22 @@ export default function MainPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div className="body">
-    <ReportForCard/>
-    <div className="statCardsContainers">
-        {stats.map((stat,index)=>{
-            return(<StatCard stat={stat} index={index}/>);
-    })}
+  return (
+    <div className="body">
+      {!isLoading ? (
+        <>
+          {" "}
+          <ReportForCard />
+          <div className="statCardsContainers">
+            {stats &&
+              stats.map((stat, index) => {
+                return <StatCard stat={stat} index={index} />;
+              })}
+          </div>
+        </>
+      ) : (
+        <div className="spinner" />
+      )}
     </div>
-  </div>;
+  );
 }

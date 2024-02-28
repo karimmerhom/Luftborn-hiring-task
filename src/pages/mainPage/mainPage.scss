@@ -7,20 +7,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 6.14% ;
-  padding-right: 6.14% ;
-  padding-top: 6.14% ;
-  padding-bottom: 6.14% ;
-  padding-left: 6.14% ;
-  padding-right: 6.14% ;  
+  padding-left: 6.14%;
+  padding-right: 6.14%;
+  padding-top: 6.14%;
+  padding-bottom: 6.14%;
   @include mobile {
-    padding-left: 2.14% ;
-    padding-right: 2.14% ;  
+    padding-left: 2.14%;
+    padding-right: 2.14%;
     flex-direction: column;
     height: fit-content;
   }
 
-  .statCardsContainers{
+  .statCardsContainers {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -32,14 +30,21 @@
     align-items: flex-start;
     justify-content: space-between;
     @include mobile {
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        width: 100%;
-        padding-left: 6.14% ;
-        padding-right: 6.14% ;
-      }
-    
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      width: 100%;
+      padding-left: 6.14%;
+      padding-right: 6.14%;
+    }
+  }
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: #5747ea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 100px auto;
   }
 }
-
